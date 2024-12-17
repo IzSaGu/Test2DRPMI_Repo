@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6378395341699409847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668853241065217479}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &668853241065217479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6378395341699409847}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.046, y: 0.062, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8588263747134142247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7441136832776995433
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,10 +62,11 @@ Transform:
   m_GameObject: {fileID: 7441136832776995433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.049, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 668853241065217479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6565454419730060226
@@ -142,8 +174,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03476131, y: 1.0806773}
-  m_Size: {x: 0.9032588, y: 2.0805511}
+  m_Offset: {x: -0.03476131, y: 1.0867642}
+  m_Size: {x: 0.9032588, y: 2.0683773}
   m_Direction: 0
 --- !u!50 &3062151136468868330
 Rigidbody2D:
@@ -160,7 +192,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -186,9 +218,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   playerInput: {fileID: 0}
-  speed: 10
-  jumpForce: 5
+  playerAnim: {fileID: 0}
+  speed: 5
+  isFacingRight: 0
+  jumpForce: 6
   isGrounded: 0
+  groundCheck: {fileID: 668853241065217479}
+  groundCheckRadius: 0.1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &7318084562243125897
 MonoBehaviour:
   m_ObjectHideFlags: 0
